@@ -33,7 +33,8 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /et
 sudo apt update -y
 
 ##INSTALANDO LIBRERIAS PHP7.4
-sudo apt-get install php7.4 php7.4-mbstring php7.4-mysqli php7.4-xml -y
+#sudo apt-get install php8.2 php8.2-mbstring php8.2-mysqli php8.2-xml php8.2-curl php8.2-cli -y
+sudo apt install php8.2 php8.2-{bcmath,fpm,xml,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi} -y
 
 ##INSTALANDO GIT,CURL
 sudo apt-get install curl git -y 
