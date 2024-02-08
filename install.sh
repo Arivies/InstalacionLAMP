@@ -34,7 +34,14 @@ sudo apt update -y
 
 ##INSTALANDO LIBRERIAS PHP7.4
 #sudo apt-get install php8.2 php8.2-mbstring php8.2-mysqli php8.2-xml php8.2-curl php8.2-cli -y
-sudo apt install php8.2 php8.2-{bcmath,fpm,xml,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi} -y
+sudo apt install php8.2 php8.2-{bcmath,fpm,xml,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgiapcu,cgi} -y
+
+##INSTALACION LIBRERIA libapache2
+sudo apt install libapache2-mod-php libapache2-mod-php8.2 -y
+
+##HABILITA  LA VERSION DE PHP QUE USARA APACHE
+sudo a2enmod php8.2
+
 
 ##INSTALANDO GIT,CURL
 sudo apt-get install curl git -y 
@@ -43,7 +50,7 @@ sudo php -v
 
 
 ##CREA ARCHIVO PHPINFO
-echo '<?php phpinfo();' >/var/www/html/info.php
+echo '<?php phpinfo(); ?>' | sudo tee /var/www/html/info.php
 
 ##INSTALACION MARIADB
 echo "INSTALACION MARIA DB"
